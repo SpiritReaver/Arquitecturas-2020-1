@@ -11,7 +11,9 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Random;
+import javax.ws.rs.Consumes;
 import javax.ws.rs.GET;
+import javax.ws.rs.POST;
 import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
@@ -66,9 +68,9 @@ public class Service {
     }
 
     @GET
-    @Path("/getSalaryByIdXML/{id}") 
+    @Path("/getSalaryByIdXML/{id}")
     @Produces(MediaType.APPLICATION_XML)
-    public double getSalaryByIdXML(@PathParam("id")int id) {
+    public double getSalaryByIdXML(@PathParam("id") int id) {
 
         return persons.get(id).getSalary();
     }
@@ -84,5 +86,23 @@ public class Service {
         }
 
         return salarioTotal;
+    }
+
+    @POST
+    @Path("addPersonInJSON")
+    @Produces(MediaType.APPLICATION_JSON)
+    @Consumes(MediaType.APPLICATION_JSON)
+    public Person addPersonInJSON(Person person) {
+        persons.put(person.getId(), person);
+        return person;
+    }
+    
+    @POST
+    @Path("addPersonInXML")
+    @Produces(MediaType.APPLICATION_XML)
+    @Consumes(MediaType.APPLICATION_XML)
+    public Person addPersonInXML(Person person) {
+        persons.put(person.getId(), person);
+        return person;
     }
 }
