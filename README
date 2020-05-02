@@ -1,0 +1,14 @@
+Laboratorio POSTMAN en servicios REST
+
+1. Se utilizo el programa POSTMAN para realizar el envio de paquetes por metodos de 
+etiquetado POST, existen 2 metodos en la clase servicio, los cuales son:
+
+-addPersonInJSON
+-addPersonInXML
+
+2. Los metodos se usan con la funcion POST del POSTMAN, inyectando el codigo en el
+formato adecuado por medio de las funciones establecidas.
+
+	
+3.Las personas son agregadas satisfactorimente al hacer uso de los metodos existentes
+de tipo GET 
